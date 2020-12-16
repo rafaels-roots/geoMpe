@@ -55,13 +55,13 @@ var app = {
                 var BackgroundFetch = window.BackgroundFetch;
                 var fetchCallback = function(taskId) 
                   {
-                    console.log('[js] BackgroundFetch event received: ', taskId);
+                    alert('[js] BackgroundFetch event received: ', taskId);
                     BackgroundFetch.finish(taskId);
                   };
 
                 var failureCallback = function(error) 
                   {
-                    console.log('- BackgroundFetch failed', error);
+                    alert('- BackgroundFetch failed', error);
                   };
 
                 BackgroundFetch.configure(fetchCallback, failureCallback, {
