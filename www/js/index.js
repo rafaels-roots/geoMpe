@@ -29,10 +29,6 @@ var app = {
     onDeviceReady: function() {
 
         app.receivedEvent('deviceready');
-        console.log("passei aqui.");
-        
-
-
         
     },
    
@@ -44,48 +40,39 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        this.backSync();
-    },
-
-    backSync: function() 
-    {
-       
-        try 
-            {
-                var BackgroundFetch = window.BackgroundFetch;
-                var fetchCallback = function(taskId) 
-                  {
-                    alert('[js] BackgroundFetch event received: ', taskId);
-                    BackgroundFetch.finish(taskId);
-                  };
-
-                var failureCallback = function(error) 
-                  {
-                    alert('- BackgroundFetch failed', error);
-                  };
-
-                BackgroundFetch.configure(fetchCallback, failureCallback, {
-                    minimumFetchInterval: 1 // <-- default is 15
-                  });
-            }
-        catch(err) 
-            {
-                alert(err);
-            } 
-
-       
-
+        this.enableGeo();
     },
 
     enableGeo: function() 
     {
        navigator.geolocation.watchPosition( function(position) 
         {
-            alert( "Lat : " + position.coords.latitude + "\n" + "Lng : " + position.coords.longitude );                 
+            const d = new Date();
+            const wparam = "lat="+position.coords.latitude+
+                        "&lng="+position.coords.longitude+
+                        "&dt="+d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()+" "+d.getHours()+ ":" + d.getMinutes() + ":" + d.getSeconds()+
+                        "&action=f_insert";
+
+            console.log("passei aqui");
+
+            app.backFetch( wparam );              
+
         }, function(error) 
         {
             alert(error.code);
         }, 
         { enableHighAccuracy : true, timeout : 5000, maximunAge : 0} ); 
+    },
+    backFetch : async function(wres) 
+    {
+        console.log("pwa/processa.php?"+wres);
+        const request = await fetch( "https://www.elohimsystems.com.br/pwa/processa.php?"+wres );
+
+        const response = await request.json();
+        console.log(response);
+
+
     }
+
 };
+
