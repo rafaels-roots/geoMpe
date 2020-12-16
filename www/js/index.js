@@ -21,21 +21,21 @@ var app = {
     initialize: function() {
         this.bindEvents();
     },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
+   
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
+   
     onDeviceReady: function() {
+
         app.receivedEvent('deviceready');
+        console.log("passei aqui.");
+        
+
+
+        
     },
-    // Update DOM on a Received Event
+   
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
@@ -44,6 +44,48 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        this.backSync();
+    },
+
+    backSync: function() 
+    {
+       
+        try 
+            {
+                var BackgroundFetch = window.BackgroundFetch;
+                var fetchCallback = function(taskId) 
+                  {
+                    console.log('[js] BackgroundFetch event received: ', taskId);
+                    BackgroundFetch.finish(taskId);
+                  };
+
+                var failureCallback = function(error) 
+                  {
+                    console.log('- BackgroundFetch failed', error);
+                  };
+
+                BackgroundFetch.configure(fetchCallback, failureCallback, {
+                    minimumFetchInterval: 1 // <-- default is 15
+                  });
+            }
+        catch(err) 
+            {
+                console.log(err);
+            } 
+
+       
+
+    },
+
+    enableGeo: function() 
+    {
+       navigator.geolocation.watchPosition( function(position) 
+        {
+            alert( "Lat : " + position.coords.latitude + "\n" + "Lng : " + position.coords.longitude );                 
+        }, function(error) 
+        {
+            alert(error.code);
+        }, 
+        { enableHighAccuracy : true, timeout : 5000, maximunAge : 0} ); 
     }
 };
