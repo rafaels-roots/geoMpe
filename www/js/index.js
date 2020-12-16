@@ -53,8 +53,6 @@ var app = {
                         "&dt="+d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()+" "+d.getHours()+ ":" + d.getMinutes() + ":" + d.getSeconds()+
                         "&action=f_insert";
 
-            console.log("passei aqui");
-
             app.backFetch( wparam );              
 
         }, function(error) 
@@ -65,11 +63,11 @@ var app = {
     },
     backFetch : async function(wres) 
     {
-        console.log("pwa/processa.php?"+wres);
+        console.log("https://www.elohimsystems.com.br/pwa/processa.php?"+wres);
         const request = await fetch( "https://www.elohimsystems.com.br/pwa/processa.php?"+wres );
 
         const response = await request.json();
-        console.log(response);
+        
 
 
     }
