@@ -28,7 +28,23 @@ var app = {
    
     onDeviceReady: function() {
 
-        console.log(navigator.Fonts);
+         if (navigator.Fonts) {
+            console.log("Fonts object in navigator");
+            navigator.Fonts.getFontList(
+                function (fontList) {
+                    if (fontlist) {
+                        for (var i = 0; i < fontlist.length; i++) {
+                            console.log("Font: " + fontlist[i]);
+                        }
+                    }
+                },
+                function (error) {
+                    console.log("FontList error: " + error);
+                }
+            );
+        } else {
+            console.log("Plugin error: Fonts plugin not found (is it installed?)");
+        }
 
         //app.receivedEvent('deviceready');
         /*try {
