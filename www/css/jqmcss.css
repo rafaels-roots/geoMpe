@@ -17,7 +17,7 @@
 .ui-mobile [data-role=footer],
 .ui-mobile [data-role=header] {
     background-color: #7386a6;
-	color: beige;
+	color: #fff;
 	text-shadow: none!important;
 	z-index: 1001;
 	font-weight: 500!important;
@@ -28,14 +28,43 @@
 		margin: 0 10%!important;
 		font-family: TahomaImport!important;
 		text-align:left;
+		
 	}
+.az-nodisc 
+	{
+	    background-color: #7386a6!important;
+	    border: none;
+	    box-shadow: none;
+	    
+	}	
 ul[data-role=listview] li .ui-btn h2 
 	{
 		font-family:TahomaImport!important;
 
 	}	
-img#icon {
-	/*float:left;*/
-	width:40px;
-	height: 40px;
-}	
+/*img#icon {
+
+	width:20px!important;
+	height: 20px!important;
+}*/	
+
+
+.has-odd-thumb .textContent {
+    margin-left: 75px !important;
+    
+}
+.thumbContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+}
+.thumbContainer img {
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+}

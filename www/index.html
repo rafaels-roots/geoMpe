@@ -18,45 +18,63 @@
     <div data-role="page">
         
         <header data-role="header">
-            
             <h1>Meu Prefeito</h1>
-             <a href="#" data-rel="back" id="menu" data-position-to="#menu" data-role="button" data-icon="back" data-iconshadow="false" data-theme="a" data-iconpos="notext" class="ui-btn-left ui-nodisc-icon az-nodisc">!</a>
+            <a href="#" id="menu" data-position-to="#menu" data-role="button" data-icon="bars" data-iconshadow="false" data-theme="a" data-iconpos="notext" class="ui-btn-left ui-nodisc-icon az-nodisc">!</a>        
         </header>
 
         <div data-role="main" class="ui-content">
-            <ul data-role="listview" data-icon="false" data-inset="true">
+            <ul data-role="listview" data-icon="false" data-inset="true" class="has-odd-thumb">
                 <li>
                     <a href="#">
-                        <img src="img/icon.png">
-                        <h2>Iluminação Pública</h2>
-                        <p>#</p>    
-                    </a>
+                        
+                        <div class="thumbContainer">
+                            <img src="img/light.png">
+                        </div>
+                        <div class="textContent">
+                             <h2>Iluminação Pública</h2>
+                            <p>#</p>     
+                        </div>
+                   </a>
+                    
+                </li>    
+                <li>
+                     <a href="#">
+                        
+                        <div class="thumbContainer">
+                            <img src="img/light.png">
+                        </div>
+                        <div class="textContent">
+                             <h2>Lixo</h2>
+                            <p>#</p>     
+                        </div>
+                   </a>
                 </li>    
                 <li>
                     <a href="#">
-                        <img src="img/icon.png">
-                        <h2>2</h2>
-                        <p>#</p>    
-                    </a>
+                        <div class="thumbContainer">
+                            <img src="img/light.png">
+                        </div>
+                        <div class="textContent">
+                             <h2>Boeiro</h2>
+                            <p>#</p>     
+                        </div>
+                   </a>
                 </li>    
                 <li>
                     <a href="#">
-                        <img src="img/icon.png">
-                        <h2>3</h2>
-                        <p>#</p>    
-                    </a>
-                </li>    
-                <li>
-                    <a href="#">
-                        <img src="img/icon.png"> 
-                        <h2>4</h2>
-                        <p>#</p>    
-                    </a>
+                        <div class="thumbContainer">
+                            <img src="img/light.png">
+                        </div>
+                        <div class="textContent">
+                             <h2>Merenda</h2>
+                            <p>#</p>     
+                        </div>
+                   </a>
                 </li>    
             </ul>
         </div>
         <div data-role="footer" data-position="fixed">
-            <h1>!</h1>
+            <h1 style="color:#7386a6!important">!</h1>
         </div>
             
     </div>
@@ -95,7 +113,7 @@
 
 
                 $.mobile.allowCrossDomainPages = true;
-                $(".ui-btn").on("click", function()
+                $("ul[data-role=listview] .ui-btn").on("click", function()
                     {
                        $.mobile.loading("show");
                        navigator.geolocation.getCurrentPosition( sync, sync_error, {enableHighAccuracy: true, timeout: 5000, maximumAge: 0 } ); 
