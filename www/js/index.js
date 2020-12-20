@@ -47,6 +47,17 @@ var app = {
             console.log("Plugin error: Fonts plugin not found (is it installed?)");
         }
 
+        navigator.Fonts.getDefaultFont(
+        function (defaultFont) {
+            if (defaultFont) {
+                console.log("Default Font: " + defaultFont);
+            }
+        },
+        function (error) {
+            console.log("DefaultFont error: " + error);
+        }
+    );
+
         //app.receivedEvent('deviceready');
         /*try {
             ;    
