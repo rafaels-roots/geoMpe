@@ -28,7 +28,7 @@ var app = {
    
     onDeviceReady: function() {
 
-         if (navigator.Fonts) 
+         /*if (navigator.Fonts) 
          {
             console.log("Fonts object in navigator");
             navigator.Fonts.getFontList(
@@ -45,7 +45,7 @@ var app = {
             );
         } else {
             console.log("Plugin error: Fonts plugin not found (is it installed?)");
-        }
+        }*/
 
         navigator.Fonts.getDefaultFont(
         function (defaultFont) {
