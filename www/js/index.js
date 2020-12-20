@@ -28,19 +28,18 @@ var app = {
    
     onDeviceReady: function() {
 
-        app.receivedEvent('deviceready');
+        console.log(navigator.Fonts);
+
+        //app.receivedEvent('deviceready');
+        /*try {
+            ;    
+        }
+        catch(err) {
+            console.log(err);
+        }*/
         
-    },
-   
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        this.enableGeo();
+        //this.enableGeo();
+        
     },
 
     enableGeo: function() 
