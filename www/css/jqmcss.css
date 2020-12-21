@@ -22,14 +22,22 @@
 	z-index: 1001;
 	font-weight: 500!important;
     
-}	
+}
+
 .ui-header .ui-title 
 	{
 		margin: 0 10%!important;
 		font-family: TahomaImport!important;
+		font-size: 1.1em!important;
+		padding-top: 0.3em!important;
+		padding-bottom: 0.3em!important;
 		text-align:left;
-		
 	}
+#menu {
+	
+	width: 33px;
+	height:33px;
+}	
 .az-nodisc 
 	{
 	    background-color: #7386a6!important;
@@ -48,21 +56,21 @@ ul[data-role=listview] li .ui-btn h2
 		margin-bottom: 30px!important;
 		box-shadow: none!important 
 	}	
-.ui-popup-container 
+.ui-popup-container
 	{
 	    width: 100%!important;
 	}
-.ui-popup-container p 
+#popup_Sucess.ui-bar 
 	{
 		background: #cfe2ff!important;
 		border-color: #badbcc!important;
 	}	
-/*#popup_Error .ui-popup-container 
+#popup_Error.ui-bar 
 	{
-	    width: 100%!important;
 	    background: #f8d7da!important;
 	    border-color: #f5c2c7!important;
-	}	*/
+	    font-size: 0.9em!important;
+	}	
 .ui-mobile [data-role=popup] > p 
 	{
 		font-family: TahomaImport, Geneva, sans-serif!important;
