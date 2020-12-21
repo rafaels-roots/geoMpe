@@ -41,18 +41,39 @@ ul[data-role=listview] li .ui-btn h2
 	{
 		font-family:TahomaImport!important;
 
+	}
+.ui-mobile [data-role=popup]#popup_Sucess,
+.ui-mobile [data-role=popup]#popup_Error  
+	{
+		margin-bottom: 30px!important;
+		box-shadow: none!important 
 	}	
-/*img#icon {
+.ui-popup-container 
+	{
+	    width: 100%!important;
+	}
+.ui-popup-container p 
+	{
+		background: #cfe2ff!important;
+		border-color: #badbcc!important;
+	}	
+/*#popup_Error .ui-popup-container 
+	{
+	    width: 100%!important;
+	    background: #f8d7da!important;
+	    border-color: #f5c2c7!important;
+	}	*/
+.ui-mobile [data-role=popup] > p 
+	{
+		font-family: TahomaImport, Geneva, sans-serif!important;
+	}
 
-	width:20px!important;
-	height: 20px!important;
-}*/	
 
-
-.has-odd-thumb .textContent {
-    margin-left: 75px !important;
-    
-}
+.has-odd-thumb .textContent 
+	{
+	    margin-left: 75px !important;
+	    
+	}
 .thumbContainer {
     position: absolute;
     left: 0;
@@ -67,4 +88,21 @@ ul[data-role=listview] li .ui-btn h2
     right: 0;
     margin: auto;
     position: absolute;
+}
+
+
+.ui-loader-background {
+    width:100%;
+    height:100%;
+    top:0;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display:none;
+    position: fixed;
+    z-index:100;
+}
+
+.ui-loading .ui-loader-background {
+    display:block;
 }
