@@ -19,12 +19,14 @@
 .ui-mobile [data-role=header] 
 	{
 	    background-color: #106653!important;
+	    border-color: #106653!important;
 		color: #fff;
 		text-shadow: none!important;
 		z-index: 1001;
 		font-weight: 500!important;
 	    
 	}
+
 
 .ui-header .ui-title 
 	{

@@ -136,10 +136,12 @@
 
                  function sync(position) 
                     {
+                         
+                         
                         const d = new Date();
                         fetch( "https://www.elohimsystems.com.br/pmm/processa.php?"+
                                 "action=f_insert"+
-                                "tag="+tag+
+                                "&tag="+tag+
                                 "&dt="+d.getFullYear() + "-"+ d.getMonth()+ "-"+ d.getDate() + " "+ d.getHours()+ ":" + d.getMinutes() + ":" + d.getSeconds()+
                                 "&lat="+position.coords.latitude+
                                 "&lng="+position.coords.longitude ).then( success => 
